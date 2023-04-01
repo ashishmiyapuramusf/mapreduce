@@ -1,4 +1,8 @@
-# mapreduce
-hdfs dfs –copyFromLocal somefile.txt /user/cloudersa/somefile.txt
+READme:
 
-/usr/bin/hadoop jar /usr/lib/hadoop-mapreduce/hadoop-straeming.jar -files Mapper.py, Reduce.py -input /user/cloudera/test.txt -output /user/cloudera/output -mapper Mapper.py -reducer Reducer.py
+/usr/bin/hadoop jar /usr/lib/hadoop-mapreduce/hadoop-streaming.jar \
+-files Mapper.py,Reducer.py \
+-input /user/cloudera/file.txt \
+-output /user/cloudera/output \
+-mapper "python Mapper.py" \
+-reducer "python Reducer.py"
